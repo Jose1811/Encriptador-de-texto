@@ -3,32 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encriptador de texto</title>
-    <link rel="shortcut icon" href="imagenes/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css"/>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Encriptador</title>
 </head>
 <body>
+    <nav class="navbar navbar-ligth bg-light">
+        <img src="img/Logo.png" width="120" height="48" alt="logo">
+    </nav>
     <div class="container">
-        <div class="encriptar">
-            <textarea name="texto" class="texto" id="texto" cols="30" rows="10" placeholder="Ingrese el texto aquí"></textarea>
-            <div class="terminos">
-                <p>solo letras minúsculas y sin acentos.</p>
+        <div class="row">
+            <div class="col-7 box_colum1">
+                <form action="">
+                    <div class="form-group">
+                        <textarea placeholder="Ingrese el texto aqui" id="box_txtarea" class="form-control box_txtarea" rows="13" ></textarea>
+                        <div class="form-control-feedback" id="text_feedback">Solo Ingrese letras minusculas y sin acentos</div>
+                    </div>
+                </form>
+                <p class="alert"><img src="img/alert_circule.png" alt="alert"> Solo letras minusculas y sin acentos</p>
+                <div class="btn_options text-center ">
+                    <button type="button" onclick="encrypt()" class="btn btn-primary btn_encrypt">Encriptar</button>
+                    <button type="button" onclick="decrypt()" class="btn btn-primary btn_dencrypt">Desencriptar</button>
+                </div>
             </div>
-            <div class="botones">
-                <button class="btnEncriptar" type="button" onclick="encriptar()">Encriptar</button>
-                <input type="button" class="btnDesencriptar" value="Desencriptar" onclick="desencriptar()">
-            </div>
-        </div>
-        <div class="encriptado">
-            <img src="imagenes/muñeco.png" alt="" id="muñeco"/>
-            <div class="mensajeEncriptado" id="mensajeEncriptado">
-                <h2 id="tituloMensaje">Ningún mensaje fue encontrado</h2>
-                <p id = "parrafo">Ingresa el texto que deseas encriptar o desencriptar</p>
-            <!--textarea name="mensaje" id="mensaje" cols="30" rows="10" class="mensaje"></textarea-->
+            <div class="col-auto box_colum2"> 
+                <p id="text_container">mensaje</p>
+                <img src="img/Muñeco.png" alt="avatar" width="336" height="304" id="img_people" class="rounded img_people">
+                <div id="text_img" class="text_img">
+                    <h2>Ningún mensaje fue encontrado</h2>
+                    <p>Ingrese el texto que desees encriptar o desencriptar.</p>
+                </div>
+                <div  class="btn_option_copy text-center">
+                    <button type="button" onclick="copyText()" id="btn_copy" class="btn btn-primary btn_copy">Copiar</button>
+                </div>
             </div>
         </div>
     </div>
+    <footer class=" text-center text-lg-start">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            Copyright © |
+            <a class="text-body"></a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
 </body>
-<script src="index.js"></script>
 </html>
